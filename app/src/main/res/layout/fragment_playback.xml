@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        app:surface_type="texture_view"
+        app:use_controller="false"
+        app:resize_mode="fit"
+        android:layout_gravity="center"
+        app:show_buffering="when_playing"
+        app:shutter_background_color="@android:color/black"
+        android:background="@android:color/black" />
+
+    <RelativeLayout
+        android:id="@+id/controls_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <!-- Control buttons in a horizontal row at the bottom -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="#66000000"
+            android:padding="8dp">
+
+            <!-- Close/Exit Button -->
+            <ImageButton
+                android:id="@+id/btn_exit"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.9"
+                android:background="@drawable/button_focus_state"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_exit"
+                android:focusable="true"
+                android:clickable="true"
+                android:padding="12dp" />
+
+            <!-- Previous Button -->
+            <ImageButton
+                android:id="@+id/btn_previous"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.9"
+                android:background="@drawable/button_focus_state"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_previous_channel"
+                android:focusable="true"
+                android:clickable="true"
+                android:padding="12dp" />
+
+            <!-- Settings Button -->
+            <ImageButton
+                android:id="@+id/btn_audio_track"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.9"
+                android:background="@drawable/button_focus_state"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_settings"
+                android:focusable="true"
+                android:clickable="true"
+                android:padding="12dp" />
+
+            <!-- Aspect Ratio Button -->
+            <ImageButton
+                android:id="@+id/btn_aspect_ratio"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.9"
+                android:background="@drawable/button_focus_state"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_aspect_ratio"
+                android:focusable="true"
+                android:clickable="true"
+                android:padding="12dp" />
+
+            <!-- Channels List Button -->
+            <ImageButton
+                android:id="@+id/btn_channels"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.9"
+                android:background="@drawable/button_focus_state"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_list"
+                android:focusable="true"
+                android:clickable="true"
+                android:padding="12dp" />
+
+            <!-- Next Button -->
+            <ImageButton
+                android:id="@+id/btn_next"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:alpha="0.9"
+                android:background="@drawable/button_focus_state"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_next_channel"
+                android:focusable="true"
+                android:clickable="true"
+                android:padding="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/channel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/channel_name_background"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="gone"
+        android:padding="8dp" />
+
+</FrameLayout> 
